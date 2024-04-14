@@ -27,13 +27,13 @@ code {
 }
 
 .note.new {
-  background-color: #98D8AA;
+  background-color: #4CCD99;
 }
 
 textarea {
   border: none;
   resize: none;
-  background-color: #98D8AA;
+  background-color: #4CCD99;
 }
 
 textarea:focus {
@@ -53,7 +53,7 @@ textarea:focus {
 }
 
 .note {
-  background-color: #F3E99F;
+  background-color: #FFF455;
   border-radius: 10px;
   padding: 1rem;
   min-height: 170px;
@@ -71,4 +71,22 @@ textarea:focus {
 
 .delete-icon {
   cursor: pointer;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #D8D9DA;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 1.5em;
+}
+
+.search input {
+  border: none;
+  background-color: #D8D9DA;
+}
+
+.search input:focus {
+  outline: none;
 }
