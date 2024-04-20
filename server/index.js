@@ -5,6 +5,7 @@ const cors = require("cors");
 
 // Imports
 const userRoutes = require("./routes/user");
+const noteRoutes = require("./routes/note");
 
 // Initialize app
 const app = express();
@@ -22,10 +23,9 @@ db.once("open", () => {
   console.log("Connected to MongoDB database!");
 });
 
-
 // Routes
 app.use("/api/users", userRoutes);
-
+app.use("/api/notes", noteRoutes);
 
 // Start the server
 const port = process.env.PORT || 4000;
