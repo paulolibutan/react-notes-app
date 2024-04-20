@@ -3,6 +3,9 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+// Imports
+const userRoutes = require("./routes/user");
+
 // Initialize app
 const app = express();
 
@@ -11,11 +14,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
-app.use("/", (req, res) => {
-  return res.json("Welcome to Simple Note App API!");
-});
-
 // Database connection
 mongoose.connect(process.env.MONGODB_URL);
 const db = mongoose.connection;
@@ -23,6 +21,11 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 db.once("open", () => {
   console.log("Connected to MongoDB database!");
 });
+
+
+// Routes
+app.use("/api/users", userRoutes);
+
 
 // Start the server
 const port = process.env.PORT || 4000;
