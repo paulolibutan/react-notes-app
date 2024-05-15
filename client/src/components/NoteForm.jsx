@@ -1,4 +1,4 @@
-const NoteForm = ({ headerText }) => {
+const NoteForm = ({ headerText, setIsOpen }) => {
   return (
     <div className="flex justify-center items-center sm:mt-10">
       <div className="flex flex-col shadow-2xl p-10 w-full sm:max-w-[500px] relative">
@@ -14,7 +14,7 @@ const NoteForm = ({ headerText }) => {
             <textarea className="px-2 py-1 border rounded-md" rows={10} />
           </div>
 
-          <div className="flex flex-col gap-3 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
             <button
               type="submit"
               className="bg-emerald-500 py-2 rounded-md text-white hover:bg-emerald-600 w-full"
@@ -23,7 +23,8 @@ const NoteForm = ({ headerText }) => {
             </button>
             <button
               type="button"
-              className="bg-slate-500 py-2 rounded-md text-white hover:bg-slate-600 w-full"
+              onClick={() => setIsOpen(false)}
+              className="bg-gray-500 py-2 rounded-md text-white hover:bg-gray-600 w-full"
             >
               Cancel
             </button>

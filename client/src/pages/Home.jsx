@@ -11,10 +11,6 @@ const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
 
-  const handleOpenAddNote = () => {
-    setIsOpen(true);
-  };
-
   const handleLogout = () => {
     logout();
   };
@@ -27,9 +23,9 @@ const Home = () => {
         setShowMobileNav={setShowMobileNav}
       />
       {showMobileNav && <MobileNav handleLogout={handleLogout} />}
-      <CreateNote isOpen={isOpen} />
+      <CreateNote isOpen={isOpen} setIsOpen={setIsOpen} />
       <button
-        onClick={handleOpenAddNote}
+        onClick={() => setIsOpen(true)}
         className="fixed bottom-10 right-10 bg-emerald-500 p-3 rounded-full text-2xl text-white shadow-2xl"
       >
         <FaPlus />

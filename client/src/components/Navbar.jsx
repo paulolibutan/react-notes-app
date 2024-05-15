@@ -14,7 +14,7 @@ const Navbar = ({ showMobileNav, setShowMobileNav, handleLogout }) => {
         </NavLink>
         <ul className="hidden sm:flex flex-row items-center gap-5">
           <li className="hover:underline hover:underline-offset-4 hover:cursor-pointer hover:scale-105">
-            Edit Profile
+            Profile
           </li>
           <li
             onClick={handleLogout}
