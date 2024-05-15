@@ -60,8 +60,6 @@ const Login = () => {
     });
   };
 
-  console.log(formData);
-
   return isAuthenticated ? (
     <Navigate to="/" />
   ) : (
