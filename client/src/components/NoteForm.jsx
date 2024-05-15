@@ -1,4 +1,4 @@
-const NoteForm = ({ headerText, toggleAddNote }) => {
+const NoteForm = ({ headerText }) => {
   return (
     <div className="flex justify-center items-center sm:mt-10">
       <div className="flex flex-col shadow-2xl p-10 w-full sm:max-w-[500px] relative">
@@ -22,8 +22,7 @@ const NoteForm = ({ headerText, toggleAddNote }) => {
               Save
             </button>
             <button
-              onClick={toggleAddNote}
-              type="submit"
+              type="button"
               className="bg-slate-500 py-2 rounded-md text-white hover:bg-slate-600 w-full"
             >
               Cancel

@@ -1,13 +1,9 @@
 import NoteForm from "./NoteForm";
 
-const CreateNote = () => {
+const CreateNote = ({ isOpen }) => {
   const headerText = "Create new note";
 
-  return (
-    <div>
-      <NoteForm headerText={headerText} />
-    </div>
-  );
+  return <div>{isOpen && <NoteForm headerText={headerText} />}</div>;
 };
 
 export default CreateNote;
