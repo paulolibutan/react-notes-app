@@ -1,6 +1,7 @@
 import { Label, TextInput, Button } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { MdEmail } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 import PasswordInput from "../components/PasswordInput";
 import { validateEmail } from "../utils/helper";
@@ -35,16 +36,16 @@ const Login = () => {
 
   useEffect(() => {
     setError("");
-  }, []);
+  }, [formData]);
 
   return (
-    <div className="flex justify-center items-center mt-32">
+    <div className="flex justify-center items-center mt-28">
       <form
         onSubmit={(e) => handleLogin(e)}
-        className="flex flex-col gap-4 max-w-md w-full bg-transparent shadow-2xl p-10"
+        className="flex flex-col gap-4 max-w-md w-full bg-white shadow-2xl px-10 py-12"
       >
-        <h1 className="text-2xl text-center font-bold text-cyan-600">
-          Login to Noteefy
+        <h1 className="text-2xl text-center font-bold text-cyan-700">
+          Login to your account
         </h1>
         <div>
           <div className="block mb-2">
@@ -69,9 +70,13 @@ const Login = () => {
 
         <div className="text-red-500 text-sm">{error}</div>
 
-        <Button className="w-full mt-2" type="submit">
+        <Button className="w-full" type="submit">
           Login
         </Button>
+        <h4 className="text-sm">
+          No account yet?{" "}
+          <Link to="/register" className="text-cyan-600 underline hover:cursor-pointer">Sign up here.</Link>
+        </h4>
       </form>
     </div>
   );
